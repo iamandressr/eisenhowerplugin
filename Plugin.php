@@ -36,7 +36,7 @@ class Plugin extends Base
 
     public function getAuthor()
     {
-        return 'Tu Nombre';
+        return 'Andrés Silva';
     }
 
     public function getHomepage()
