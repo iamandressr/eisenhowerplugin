@@ -12,10 +12,10 @@ class Plugin extends Base
     $this->route->addRoute('eisenhower', 'EisenhowerController', 'show', 'project');
 
     // Inserta el cuadrante Eisenhower después de las columnas del tablero
-    $this->template->hook->attach('template:board:show:after-columns', 'eisenhower:template/board/eisenhower-quadrant');
+    $this->template->hook->attach('Template:board:show:after-columns', 'eisenhower:Template/board/eisenhower-quadrant');
 
     // Carga el CSS del plugin
-    $this->hook->on('template:layout:css', ['plugins/Eisenhower/Assets/css/eisenhower.css']);
+    $this->hook->on('Template:layout:css', ['plugins/Eisenhower/Assets/css/eisenhower.css']);
 }
 
     public function getPluginName()
