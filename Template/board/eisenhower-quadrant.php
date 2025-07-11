@@ -1,3 +1,7 @@
+<div style="padding: 20px; background: #eee; border: 1px solid #ccc; margin-top: 20px;">
+  Cuadrante Eisenhower funcionando!
+</div>
+
 <div class="eisenhower-matrix">
     <div class="quadrant urgent-important">Urgente e Importante</div>
     <div class="quadrant not-urgent-important">No Urgente pero Importante</div>
