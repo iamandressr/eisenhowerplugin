@@ -1,0 +1,17 @@
+.eisenhower-matrix {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.quadrant {
+    border: 2px dashed #999;
+    padding: 1rem;
+    min-height: 150px;
+    background: #f9f9f9;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+}
