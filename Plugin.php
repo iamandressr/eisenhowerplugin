@@ -7,12 +7,16 @@ use Kanboard\Core\Plugin\Base;
 class Plugin extends Base
 {
     public function initialize()
-    {
-        // Añade un enlace en el menú del proyecto
-        $this->route->addRoute('eisenhower', 'EisenhowerController', 'show', 'project');
-        $this->template->hook->attach('template:board:show:after-columns', 'eisenhowerplugin:board/eisenhower-quadrant');
-        $this->hook->on('template:layout:css', array('plugins/Eisenhower/Assets/css/eisenhower.css'));
-    }
+{
+    // Ruta opcional (puedes eliminarla si no usarás controlador propio)
+    $this->route->addRoute('eisenhower', 'EisenhowerController', 'show', 'project');
+
+    // Inserta el cuadrante Eisenhower después de las columnas del tablero
+    $this->template->hook->attach('template:board:show:after-columns', 'eisenhower:board/eisenhower-quadrant');
+
+    // Carga el CSS del plugin
+    $this->hook->on('template:layout:css', ['plugins/Eisenhower/Assets/css/eisenhower.css']);
+}
 
     public function getPluginName()
     {
