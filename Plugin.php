@@ -39,8 +39,8 @@ class Plugin extends Base
         return 'Andrés Silva';
     }
 
-    public function getHomepage()
+    public function getPluginHomepage()
     {
-        return 'https://github.com/iamandressr';
+        return 'https://github.com/iamandressr/eisenhowerplugin';
     }
 }
