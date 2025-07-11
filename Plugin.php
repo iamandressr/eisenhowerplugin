@@ -10,7 +10,7 @@ class Plugin extends Base
     {
         // Añade un enlace en el menú del proyecto
         $this->route->addRoute('eisenhower', 'EisenhowerController', 'show', 'project');
-        $this->template->hook->attach('template:board:show:after-columns', 'eisenhower:board/eisenhower-quadrant');
+        $this->template->hook->attach('template:board:show:after-columns', 'eisenhowerplugin:board/eisenhower-quadrant');
         $this->hook->on('template:layout:css', array('plugins/Eisenhower/Assets/css/eisenhower.css'));
     }
 
@@ -31,7 +31,7 @@ class Plugin extends Base
 
     public function getCompatibleVersion()
     {
-        return '>=1.2.7'; // Cambia según la versión mínima de Kanboard que uses
+        return '>=1.2.7'; 
     }
 
     public function getPluginAuthor()
