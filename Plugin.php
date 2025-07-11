@@ -34,7 +34,7 @@ class Plugin extends Base
         return '>=1.2.7'; // Cambia según la versión mínima de Kanboard que uses
     }
 
-    public function getAuthor()
+    public function getPluginAuthor()
     {
         return 'Andrés Silva';
     }
