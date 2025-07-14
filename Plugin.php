@@ -21,7 +21,7 @@ class Plugin extends Base
     public function getPluginDescription()
     {
         file_put_contents('/tmp/plugin_eisenhower.log', "✅ getPluginDescription ejecutado\n", FILE_APPEND);
-        return 'Plugin Eisenhower activo';
+        return 'Plugin cuadrante Eisenhower en tablero de proyectos';
     }
 
     public function getPluginName()
