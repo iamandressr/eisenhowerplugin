@@ -7,20 +7,24 @@ use Kanboard\Core\Plugin\Base;
 class Plugin extends Base
 {
     public function initialize()
-    {
-        //Rutas
-        $this->route->addRoute('eisenhower/show/:project_id', 'EisenhowerController', 'show', 'Eisenhower');
+{
+    // Definir ruta para el plugin Eisenhower
+    $this->route->addRoute('eisenhower/show/:project_id', 'EisenhowerController', 'show', 'Eisenhower');
 
-        // Insertar algo visual en la barra lateral
-        $this->template->hook->attach('template:project:sidebar:actions', function () {
+    // Definir permisos para que los miembros del proyecto puedan acceder al controlador show
+    $this->projectAccessMap->add('EisenhowerController', 'show', Role::PROJECT_MEMBER);
+
+    // Agregar texto visual simple en la barra lateral (para testear)
+    $this->template->hook->attach('template:project:sidebar:actions', function () {
         echo '<div style="color: green; font-weight: bold;">PLUGIN ACTIVO</div>';
-        });
-        $this->template->hook->attach('template:project:sidebar', 'eisenhower:sidebar/link');
+    });
 
+    // Insertar plantilla con enlace al plugin en la barra lateral del proyecto
+    $this->template->hook->attach('template:project:sidebar', 'eisenhower:sidebar/link');
 
-        // Registrar en log que se cargó initialize
-        file_put_contents(__DIR__.'/plugin_test.log', date('Y-m-d H:i:s')." - initialize ejecutado\n", FILE_APPEND);
-    }
+    // Registrar log para depuración (opcional)
+    file_put_contents(__DIR__.'/plugin_test.log', date('Y-m-d H:i:s')." - initialize ejecutado\n", FILE_APPEND);
+}
 
     public function getPluginDescription()
     {
