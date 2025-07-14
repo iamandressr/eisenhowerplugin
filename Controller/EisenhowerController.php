@@ -8,7 +8,7 @@ class EisenhowerController extends BaseController
 {
     public function show()
     {
-        echo "✅ Entró al controlador Eisenhower";
+        echo "✅ Controlador Eisenhower funciona";
         exit;
     }
 }
