@@ -27,9 +27,10 @@ class Plugin extends Base
     }
 
     public function getPluginDescription()
-    {
-        return 'Muestra un cuadrante Eisenhower para gestionar tareas según urgencia e importancia.';
-    }
+{
+    file_put_contents('/tmp/plugin_eisenhower.log', "Plugin cargado\n", FILE_APPEND);
+    return 'Muestra un cuadrante Eisenhower para gestionar tareas según urgencia e importancia.';
+}
 
     public function getPluginVersion()
     {
