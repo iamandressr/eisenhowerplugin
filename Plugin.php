@@ -18,7 +18,7 @@ class Plugin extends Base
         });
 
         // Registrar en log que se cargó initialize
-        file_put_contents('/tmp/plugin_eisenhower.log', "✅ initialize ejecutado\n", FILE_APPEND);
+        file_put_contents(__DIR__.'/plugin_test.log', "✅ initialize ejecutado\n", FILE_APPEND);
     }
 
     public function getPluginDescription()
