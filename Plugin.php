@@ -21,7 +21,7 @@ class Plugin extends Base
             });
 
             // Insertar plantilla con enlace al plugin en la barra lateral del proyecto
-            $this->template->hook->attach('template:project:sidebar', 'eisenhower:sidebar/link');
+            $this->template->hook->attach('template:project:sidebar', 'Eisenhower:sidebar/link');
 
             // Registrar log para depuración (opcional)
             file_put_contents(__DIR__.'/plugin_test.log', date('Y-m-d H:i:s')." - initialize ejecutado\n", FILE_APPEND);
