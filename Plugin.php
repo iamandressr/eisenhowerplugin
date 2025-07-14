@@ -8,6 +8,9 @@ class Plugin extends Base
 {
     public function initialize()
     {
+        //Rutas
+        $this->route->addRoute('eisenhower/show/:project_id', 'EisenhowerController', 'show', 'Eisenhower');
+
         // Insertar algo visual en la barra lateral
         $this->template->hook->attach('template:project:sidebar:actions', function () {
             echo '<div style="color: red; font-weight: bold;">PLUGIN ACTIVO</div>';
