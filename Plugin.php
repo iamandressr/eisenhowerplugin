@@ -11,9 +11,6 @@ class Plugin extends Base
     // Definir ruta para el plugin Eisenhower
     $this->route->addRoute('eisenhower/show/:project_id', 'EisenhowerController', 'show', 'Eisenhower');
 
-    // Definir permisos para que los miembros del proyecto puedan acceder al controlador show
-    $this->projectAccessMap->add('EisenhowerController', 'show', Role::PROJECT_MEMBER);
-
     // Agregar texto visual simple en la barra lateral (para testear)
     $this->template->hook->attach('template:project:sidebar:actions', function () {
         echo '<div style="color: green; font-weight: bold;">PLUGIN ACTIVO</div>';
