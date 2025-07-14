@@ -13,12 +13,11 @@ class Plugin extends Base
 
         // Insertar algo visual en la barra lateral
         $this->template->hook->attach('template:project:sidebar:actions', function () {
-            echo '<div style="color: red; font-weight: bold;">PLUGIN ACTIVO</div>';
-            echo '<script>console.log("🚀 Eisenhower Plugin cargado")</script>';
-        });
+        echo '<div style="color: green; font-weight: bold;">PLUGIN ACTIVO</div>';
+    });
 
         // Registrar en log que se cargó initialize
-        file_put_contents(__DIR__.'/plugin_test.log', "✅ initialize ejecutado\n", FILE_APPEND);
+        file_put_contents(__DIR__.'/plugin_test.log', date('Y-m-d H:i:s')." - initialize ejecutado\n", FILE_APPEND);
     }
 
     public function getPluginDescription()

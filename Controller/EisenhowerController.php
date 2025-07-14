@@ -8,10 +8,7 @@ class EisenhowerController extends BaseController
 {
     public function show()
     {
-        $project = $this->getProject();
-        
-        $this->response->html($this->helper->layout->project('eisenhower:board/eisenhower-quadrant', [
-            'project' => $project,
-        ]));
+        echo "✅ Entró al controlador Eisenhower";
+        exit;
     }
 }
