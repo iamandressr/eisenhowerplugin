@@ -16,6 +16,8 @@ class Plugin extends Base
                 echo '<div style="color: green; font-weight: bold;">PLUGIN ACTIVO</div>';
             });
 
+            $this->template->hook->attach('template:project:sidebar', 'eisenhower:sidebar/link'); // ✅
+
             $this->container['EisenhowerController'] = $this->container->factory(function ($c) {
                 return new \Kanboard\Plugin\Eisenhower\Controller\EisenhowerController($c);
             });
