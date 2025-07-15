@@ -7,25 +7,26 @@ use Kanboard\Core\Plugin\Base;
 class Plugin extends Base
 {
     public function initialize()
-        {
-            // Definir ruta para el plugin Eisenhower
-            $this->route->addRoute('eisenhower/show/:project_id', 'EisenhowerController', 'show', 'eisenhower');
+    {
+        //Primero: Controladores
+        $this->container['EisenhowerController'] = $this->container->factory(function ($c) {
+            return new \Kanboard\Plugin\Eisenhower\Controller\EisenhowerController($c);
+        });
 
-            // Agregar texto visual simple en la barra lateral (para testear)
-            $this->template->hook->attach('template:project:sidebar:actions', function () {
-                echo '<div style="color: green; font-weight: bold;">PLUGIN ACTIVO</div>';
-            });
+        //Segundo: Rutas
+        $this->route->addRoute('eisenhower/show/:project_id', 'EisenhowerController', 'show', 'eisenhower');
 
-            $this->template->hook->attach('template:project:sidebar', 'eisenhower:sidebar/link'); // ✅
+        //Mostrar algo visual para testeo
+        $this->template->hook->attach('template:project:sidebar:actions', function () {
+            echo '<div style="color: green; font-weight: bold;">PLUGIN ACTIVO</div>';
+        });
 
-            $this->container['EisenhowerController'] = $this->container->factory(function ($c) {
-                return new \Kanboard\Plugin\Eisenhower\Controller\EisenhowerController($c);
-            });
+        //Insertar un link a la vista eisenhower en la barra lateral
+        $this->template->hook->attach('template:project:sidebar', 'eisenhower:sidebar/link');
 
-
-            // Registrar log para depuración (opcional)
-            file_put_contents(__DIR__.'/plugin_test.log', date('Y-m-d H:i:s')." - initialize ejecutado\n", FILE_APPEND);
-        }
+        // 5️⃣ Registrar log para depuración
+        file_put_contents(__DIR__.'/plugin_test.log', date('Y-m-d H:i:s')." - initialize ejecutado\n", FILE_APPEND);
+    }
 
     public function getPluginDescription()
     {
