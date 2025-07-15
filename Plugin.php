@@ -22,6 +22,7 @@ class Plugin extends Base
                 return new \Kanboard\Plugin\Eisenhower\Controller\EisenhowerController($c);
             });
 
+
             // Registrar log para depuración (opcional)
             file_put_contents(__DIR__.'/plugin_test.log', date('Y-m-d H:i:s')." - initialize ejecutado\n", FILE_APPEND);
         }
