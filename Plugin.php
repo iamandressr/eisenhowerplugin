@@ -9,7 +9,7 @@ class Plugin extends Base
     public function initialize()
     {
         //Primero: Controladores
-        $this->container['EisenhowerController'] = $this->container->factory(function ($c) {
+        $this->container['plugin-eisenhower-eisenhower'] = $this->container->factory(function ($c) {
             return new \Kanboard\Plugin\Eisenhower\Controller\EisenhowerController($c);
         });
 
