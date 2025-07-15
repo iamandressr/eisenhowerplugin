@@ -8,7 +8,8 @@ class EisenhowerController extends BaseController
 {
     public function show()
     {
-        echo '<script>console.log("✅ Controlador Eisenhower funciona desde PHP");</script>';
+        echo '<script>alert("✅ Controlador Eisenhower funciona desde PHP");</script>';
+        echo '<h1>Hola desde el plugin Eisenhower</h1>';
         exit;
     }
 }
