@@ -7,8 +7,10 @@ use Kanboard\Controller\BaseController;
 class EisenhowerController extends BaseController
 {
     public function show()
-    {
-        echo "✅ Controlador Eisenhower funciona";
-        exit;
-    }
+{
+    header('Content-Type: text/plain');
+    echo "✅ Controlador Eisenhower funciona\n";
+    exit;
+}
+
 }
