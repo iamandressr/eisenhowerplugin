@@ -9,7 +9,7 @@ class Plugin extends Base
     public function initialize()
         {
             // Definir ruta para el plugin Eisenhower
-            $this->route->addRoute('eisenhower/show/:project_id', 'EisenhowerController', 'show', 'Eisenhower');
+            $this->route->addRoute('eisenhower/show/:project_id', 'EisenhowerController', 'show', 'eisenhower');
 
             // Agregar texto visual simple en la barra lateral (para testear)
             $this->template->hook->attach('template:project:sidebar:actions', function () {
